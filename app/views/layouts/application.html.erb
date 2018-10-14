@@ -14,6 +14,12 @@
   </head>
   <body>
     <%= render 'layouts/navbar' %>
+    
+    <%= yield :cover %>
+    
     <%= yield %>
+    
+    <%= render 'layouts/footer' %>
+    
   </body>
 </html>
