@@ -14,12 +14,14 @@
   </head>
   <body>
     <%= render 'layouts/navbar' %>
-    
-    <%= yield :cover %>
-    
-    <%= yield %>
-    
+    <div class="container">
+      <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <% end %>
+      <%= yield :cover %>
+      <%= yield %>
+      <%= debug(params) if Rails.env.development? %>
+    </div>
     <%= render 'layouts/footer' %>
-    
   </body>
 </html>
