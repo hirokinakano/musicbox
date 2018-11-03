@@ -8,6 +8,7 @@ class SessionsController < ApplicationController
     if artist && artist.authenticate(params[:session][:password])
       log_in artist
       redirect_to artist
+      flash.now[:success] = 'Welcome to Musicbox!'
     else
       flash.now[:danger] = 'Invalid email/password combination'
       render 'new'
