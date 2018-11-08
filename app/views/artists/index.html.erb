@@ -1,0 +1,12 @@
+<% provide(:title, 'All artists') %>
+<h1>All Artists</h1>
+
+<%= will_paginate %>
+
+<ul class="artists">
+  <% @artists.each do |artist| %>
+    <li><%= render artist %></li>
+  <% end %>
+</ul>
+
+<%= will_paginate %>
