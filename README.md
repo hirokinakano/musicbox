@@ -22,3 +22,9 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+* 要修正点
+・artistコントローラにおいてbefore_actionが適用されず。そのため、フレンドリーフォワーディングは未実装(コードは実装済み).
+・navbarのjqueryが動かず。ドロップダウンメニューをナビバーに表示する暫定処理を実施。
+・artist_indexページにてrender @artistsとすると<li>タグのレイアウトが崩れるため未実施
+・adminテスト未実装
