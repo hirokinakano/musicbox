@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  devise_for :listeners, :controllers => {
+    :registrations => 'listeners/registrations',
+    :sessions => 'listeners/sessions'}
   get 'artists/new'
   get 'sessions/new'
   root to: 'toppages#index'
