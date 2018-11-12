@@ -14,16 +14,4 @@
  *= require_self
  */
 
-/* body */
-body {
-  background: #f2f2f2;
-}
-footer {
-  margin-top: 40px;
-}
-
-/* navbar */
-.navbar {
-  background-color: #fff;
-}
 
