@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   post   '/artists/new', to: 'artists#create'
   resources :users
   resources :artists
+  resources :posts, only: [:create, :destroy]
 end

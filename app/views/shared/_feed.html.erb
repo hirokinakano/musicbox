@@ -1,0 +1,16 @@
+<% if @feed_items.any? %>
+  <h3>Posts feed</h3>
+  <ol class="posts">
+    <% @feed_items.posts.each do |post| %>
+      <li id="post-<%= post.id %>">
+        <%= link_to gravatar_for(post.artist, size: 50), post.artist %>
+        <span class="artist"><%= link_to post.artist.name, post.artist %></span>
+        <span class="content"><%= post.content %></span>
+        <span class="timestamp">
+          Posted <%= time_ago_in_words(post.created_at ) %> ago.
+        </span>
+      </li>
+    <% end %>
+  </ol>
+  <%= will_paginate @feed_items %>
+<% end %>

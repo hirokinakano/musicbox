@@ -13,3 +13,9 @@ Artist.create!(name:  "Example User",
                password:              password,
                password_confirmation: password)
 end
+
+artists = Artist.order(:created_at).take(6)
+50.times do
+  content = Faker::Lorem.sentence(5)
+  artists.each { |artist| artist.posts.create!(content: content) }
+end

@@ -1,9 +1,0 @@
-taro:
-  name: Taro Suzuki
-  email: taro@example.com
-  password_confirmation: <%= Artist.digest('password') %>
-
-ziro:
-  name: Ziro Suzuki
-  email: ziro@example.com
-  password_confirmation: <%= Artist.digest('password') %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_19_131543) do
+ActiveRecord::Schema.define(version: 2018_11_20_101719) do
 
   create_table "artists", force: :cascade do |t|
     t.string "name"
@@ -32,6 +32,15 @@ ActiveRecord::Schema.define(version: 2018_11_19_131543) do
     t.string "name"
     t.index ["email"], name: "index_listeners_on_email", unique: true
     t.index ["reset_password_token"], name: "index_listeners_on_reset_password_token", unique: true
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.text "content"
+    t.integer "artist_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["artist_id", "created_at"], name: "index_posts_on_artist_id_and_created_at"
+    t.index ["artist_id"], name: "index_posts_on_artist_id"
   end
 
   create_table "users", force: :cascade do |t|

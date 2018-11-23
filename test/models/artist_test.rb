@@ -56,4 +56,11 @@ class ArtistTest < ActiveSupport::TestCase
     assert_not @artist.valid?
   end
 
+  test "associated posts should be destroyed" do
+    @artist.save
+    @artist.post.create(content: "Hello World")
+    assert_difference 'Post.count', -1 do
+      @artist.destroy
+    end
+  end
 end

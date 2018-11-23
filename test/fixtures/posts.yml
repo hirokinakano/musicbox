@@ -1,0 +1,26 @@
+first_post:
+  content: "first message"
+  created_at: <%= 10.minutes.ago %>
+  artist: taro
+  
+second_post:
+  content: "second message"
+  created_at: <%= 3.years.ago %>
+  artist: taro
+  
+third_post:
+  content: "third message"
+  created_at: <%= 2.hours.ago %>
+  artist: ziro
+  
+most_recent:
+  content: "most recenct message"
+  created_at: <%= Time.zone.now %>
+  artist: ziro
+  
+<% 50.times do |n| %>
+post_<%= n %>:
+  content: <%= Faker::Lorem.sentence(5) %>
+  created_at: <%= 10.days.ago %>
+  artist: taro
+<% end %>

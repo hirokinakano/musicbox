@@ -1,7 +1,7 @@
 class ArtistsController < ApplicationController
   before_action :logged_in_artist, only: [:index,:edit, :update, :destroy]
   before_action :correct_user,   only: [:edit, :update]
-  before_action :admin_user, only: :destroy
+  before_action :admin_user, only: [:destroy]
   
   def index
     @artists = Artist.paginate(page: params[:page]) 
@@ -9,6 +9,7 @@ class ArtistsController < ApplicationController
 
   def show
     @artist = Artist.find(params[:id])
+    @posts = @artist.posts.paginate(page: params[:page])
   end
 
   def new
@@ -60,15 +61,6 @@ class ArtistsController < ApplicationController
       redirect_to(root_url) unless @artist == current_user
     end
    
-    # ログイン済みユーザーかどうかを確認
-    def logged_in_artist
-      unless logged_in?
-        store_location
-        flash[:danger] = "Please log in."
-        redirect_to login_url
-      end
-    end
-    
     # 管理者かどうか確認
     def admin_user
       redirect_to(root_url) unless current_user.admin?
