@@ -4,9 +4,7 @@
 <%= will_paginate %>
 
 <ul class="artists">
-  <% @artists.each do |artist| %>
-    <li><%= render artist %></li>
-  <% end %>
+  <li><%= render @artists %></li>
 </ul>
 
 <%= will_paginate %>
