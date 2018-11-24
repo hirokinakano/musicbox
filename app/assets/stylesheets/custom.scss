@@ -20,21 +20,36 @@ $gray-medium-light: #eaeaea;
 }
 
 /* header */
-
 header {
-  margin-bottom: 0px;
+  width: 100%;
+  
+  .container {
+    width: 100%;
+    height: 30px;
+    margin: 0auto;
+    background-color: white;
+
+    .header-logo {
+      display: inline-block;
+      float: left;
+      padding-top: 7px;
+    }
+    
+    .header-link {
+      float: right;
+      display: inline-block;
+      padding-top: 7px;
+    }
+    
+  }
+  
 }
 
-nav {
-  margin-bottom: 100px;
-}
 
+
+/* body */
 body {
   margin: 0;
-}
-
-nav {
-  margin-bottom: 500px;
 }
 
 /* toppage */
@@ -61,10 +76,7 @@ nav {
   }
 }
 
-
-
 /* sidebar */
-
 aside {
   section.user_info {
     margin-top: 20px;
@@ -101,7 +113,6 @@ aside {
 }
 
 /* forms */
-
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
   width: 100%;
@@ -129,7 +140,6 @@ input {
 }
 
 /* Artistss index */
-
 .artists {
   list-style: none;
   margin: 0;
