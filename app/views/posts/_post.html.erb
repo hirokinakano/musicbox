@@ -5,7 +5,14 @@
     <%= post.content %>
     <%= image_tag post.picture.url if post.picture? %>
   </span>
+  <span>
+    <audio src="<%= post.music.url %>" controls></audio>
+  </span>
   <span class="timestamp">
     Posted <%= time_ago_in_words(post.created_at ) %> ago.
+    <% if current_user?(post.artist) %>
+      <%= link_to "delete", post, method: :delete,
+                  data: {confirm: "You sure?"} %>
+    <% end %>
   </span>
 </li>

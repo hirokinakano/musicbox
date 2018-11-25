@@ -2,6 +2,7 @@ class Post < ApplicationRecord
   belongs_to :artist
   default_scope -> { order(created_at: :desc) }
   mount_uploader :picture, PictureUploader
+  mount_uploader :music, MusicUploader
   validates :artist_id, presence: true
   validates :content, presence: true, length: { maximum: 140 }
   validate :picture_size

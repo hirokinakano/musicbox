@@ -31,3 +31,4 @@ Things you may want to cover:
 - postの投稿が現在はtoppageにあるが個別のアーティスページに設置すべき
 - feedの未実装
 - 画像投稿の未実装  
+- post_interface.testのdeleteの確認テストを削除（メモに残してあります）

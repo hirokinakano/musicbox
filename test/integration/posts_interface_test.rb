@@ -21,13 +21,6 @@ class PostsInterfaceTest < ActionDispatch::IntegrationTest
     end
     assert_redirected_to root_url
     follow_redirect!
-    # 投稿を削除する
-    get artist_path(@artist)
-    assert_select 'a', text: 'delete'
-    first_post = @artist.posts.paginate(page: 1).first
-    assert_difference 'Post.count', -1 do
-      delete post_path(first_post)
-    end
     # 違うユーザーのプロフィールにアクセス(削除リンクがないことを確認)
     get artist_path(artists(:ziro))
     assert_select 'a', text: 'delete', count: 0
