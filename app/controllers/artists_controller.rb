@@ -52,7 +52,7 @@ class ArtistsController < ApplicationController
     # ストロングパラメーター
     def artist_params
       params.require(:artist).permit(:name, :email, :password,
-                                   :password_confirmation)
+                                     :password_confirmation, :content)
     end
 
     # 正しいユーザーかどうかを確認 
@@ -66,5 +66,3 @@ class ArtistsController < ApplicationController
       redirect_to(root_url) unless current_user.admin?
     end
 end
-
-

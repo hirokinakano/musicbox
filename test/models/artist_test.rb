@@ -2,20 +2,23 @@ require 'test_helper'
 
 class ArtistTest < ActiveSupport::TestCase
   def setup
-    @artist = Artist.new(name: "Example Artist", email: "artist@example.com",
-                    password: "foobar", password_confirmation: "foobar")
+    @artist = Artist.new(name: "Example Artist",
+                         email: "artist@example.com",
+                         password: "foobar",
+                         password_confirmation: "foobar",
+                         content: "Hello World")
   end
   
   test "shold be valid" do
     assert @artist.valid?
   end
   
-  test "name shold be present" do
+  test "name shold be presence" do
     @artist.name = "   "
     assert_not @artist.valid?
   end
   
-  test "email should be present" do
+  test "email should be presence" do
     @artist.email = "   "
     assert_not @artist.valid?
   end
@@ -62,5 +65,10 @@ class ArtistTest < ActiveSupport::TestCase
     assert_difference 'Post.count', -1 do
       @artist.destroy
     end
+  end
+  
+  test "content should not be too long" do
+    @artist.content = "a" * 501
+    assert_not @artist.valid?
   end
 end

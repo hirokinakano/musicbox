@@ -23,10 +23,12 @@ class ArtistsEditTest < ActionDispatch::IntegrationTest
     log_in_as(@artist)
     name = "Foo Bar"
     email = "foo@bar.com"
+    content = "FooBar"
     patch artist_path(@artist), params: { artist: { name:   name,
                                                     email: email,
                                                     password:              "",
-                                                    password_confirmation: ""} }
+                                                    password_confirmation: "",
+                                                    content: content           } }
     assert_not flash.empty?
     assert_redirected_to @artist
     @artist.reload
@@ -51,5 +53,4 @@ class ArtistsEditTest < ActionDispatch::IntegrationTest
     get artists_path
     assert_redirected_to login_url  
  end
-  
 end

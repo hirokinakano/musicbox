@@ -1,8 +1,7 @@
 <% provide(:title, "Edit user") %>
-<h1>Update your profile</h1>
-
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
+    <h1>プロフィール編集</h1>
     <%= form_for(@artist) do |f| %>
       <%= render 'shared/artist_error_messages', object: f.object %>
 
@@ -11,7 +10,10 @@
 
       <%= f.label :email %>
       <%= f.email_field :email, class: 'form-control' %>
-
+      
+      <%= f.label :content %>
+      <%= f.text_area :content, class: 'fomr-control' %>
+      
       <%= f.label :password %>
       <%= f.password_field :password, class: 'form-control' %>
 

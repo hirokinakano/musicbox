@@ -9,10 +9,12 @@ class ArtistsSignupTest < ActionDispatch::IntegrationTest
   test "invalid signup information" do
     get new_artist_path
     assert_no_difference 'User.count' do
-      post artists_path, params: { artist: { name: "",
-                                             email: "",
+      post artists_path, params: { artist: { name:                  "",
+                                             email:                 "",
                                              password:              "bar",
-                                             password_confirmation: "foo" } }
+                                             password_confirmation: "foo" ,
+                                             content:               ""      } }
+    
     end
     assert_template "artists/new"
     assert_select 'div#error_explanation'
@@ -21,10 +23,11 @@ class ArtistsSignupTest < ActionDispatch::IntegrationTest
   test "valid signup information" do
     get new_artist_path
     assert_no_difference 'User.count', 1 do
-      post artists_path, params: { artist: { name: "Example User",
-                                             email: "user@example.com",
+      post artists_path, params: { artist: { name:                  "Example User",
+                                             email:                 "user@example.com",
                                              password:              "password",
-                                             password_confirmation: "password" } }
+                                             password_confirmation: "password",
+                                             content:               "Hello World"       } }
     end
     follow_redirect!
     assert_template 'artists/show'

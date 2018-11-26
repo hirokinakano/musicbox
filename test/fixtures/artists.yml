@@ -3,26 +3,31 @@ taro:
   email: taro1234@example.com
   password_digest: <%= Artist.digest('password') %>
   admin: true
+  content: Hello World
 
 ziro:
   name:  Ziro Suzuki
   email: ziro@example.com
   password_digest: <%= Artist.digest('password') %>
+  content: Hello World
   
 lana:
   name: Lana Kane
   email: hands@example.gov
   password_digest: <%= User.digest('password') %>
+  content: Hello World
 
 malory:
   name: Malory Archer
   email: boss@example.gov
   password_digest: <%= User.digest('password') %>
+  content: Hello World
 
 <% 30.times do |n| %>
 user_<%= n %>:
   name: <%= "User #{n}" %>
   email: <%= "User-#{n}@example.com" %>
   password_digest: <%= User.digest('password') %>
+  content: Hello World
 <% end %>
   
