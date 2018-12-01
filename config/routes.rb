@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   root to: 'toppages#index'
   devise_for :listeners, :controllers => {
     :registrations => 'listeners/registrations',
-    :sessions => 'listeners/sessions'}
+    :sessions => 'listeners/sessions',
+    :omniauth_callbacks => 'listeners/omniauth_callbacks' }
   get 'artists/new'
   get 'sessions/new'
   get    '/login',   to: 'sessions#new'
@@ -12,3 +13,4 @@ Rails.application.routes.draw do
   resources :artists
   resources :posts, only: [:create, :destroy]
 end
+
