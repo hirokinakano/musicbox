@@ -9,8 +9,26 @@
         <%= link_to 'ログアウト', logout_path, method: :delete %>
         <%= link_to 'プロフィール', current_user %>
       <% else %>
-        <%= link_to '新規登録', new_artist_path %>
-        <%= link_to 'ログイン', login_path %>
+        <div class="dropdown">
+        	<a href="#" data-toggle="dropdown" role="button" aria-expanded="false">
+        		新規登録
+        		<span class="caret"></span>
+        	</a>
+        	<ul class="dropdown-menu" role="menu">
+        		<li role="presentation"><%= link_to 'アーティスト', new_artist_path %></li>
+        		<li role="presentation"><%= link_to 'リスナー', new_listener_registration_path %></li>
+        	</ul>
+        </div>
+        <div class="dropdown">
+        	<a href="#" data-toggle="dropdown" role="button" aria-expanded="false">
+        		ログイン
+        		<span class="caret"></span>
+        	</a>
+        	<ul class="dropdown-menu" role="menu">
+        		<li role="presentation"><%= link_to 'アーティスト', login_path %></li>
+        		<li role="presentation"><%= link_to 'リスナー', new_listener_session_path %></li>
+        	</ul>
+        </div>
       <% end %>
     </div>
   </nav>

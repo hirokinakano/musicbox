@@ -1,5 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome";
 
 /* mixins, variables, etc. */
 $gray-medium-light: #eaeaea;
@@ -39,13 +40,15 @@ header {
       float: right;
       display: inline-block;
       padding-top: 7px;
+      
+      .dropdown button {
+        padding: 10px;
+      }
     }
     
   }
   
 }
-
-
 
 /* body */
 body {
@@ -113,16 +116,7 @@ aside {
 }
 
 /* forms */
-input, textarea, select, .uneditable-input {
-  border: 1px solid #bbb;
-  width: 100%;
-  margin-bottom: 15px;
-  @include box_sizing;
-}
 
-input {
-  height: auto !important;
-}
 
 #error_explanation {
   color: red;
@@ -137,6 +131,15 @@ input {
   .form-control {
     color: $state-danger-text;
   }
+}
+
+/* fontawesome アイコン　*/
+i.fa-twitter {
+  color: #55acee;
+}
+
+i.fa-facebook-square {
+  color: #3B5998;
 }
 
 /* Artistss index */
