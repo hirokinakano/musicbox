@@ -52,7 +52,7 @@ class ArtistsController < ApplicationController
     # ストロングパラメーター
     def artist_params
       params.require(:artist).permit(:name, :email, :password,
-                                     :password_confirmation, :content)
+                                     :password_confirmation, :content, :image)
     end
 
     # 正しいユーザーかどうかを確認 

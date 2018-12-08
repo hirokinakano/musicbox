@@ -11,7 +11,7 @@ class ArtistsIndexTest < ActionDispatch::IntegrationTest
     log_in_as(@artist)
     get artists_path
     assert_template 'artists/index'
-    assert_select 'div.pagination', count: 2
+    assert_select 'div.pagination'
     first_page_of_artists = Artist.paginate(page: 1)
     first_page_of_artists.each do |artist|
       assert_select 'a[href=?]', artist_path(artist), text: artist.name

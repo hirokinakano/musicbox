@@ -28,5 +28,4 @@ class ActionDispatch::IntegrationTest
   def image_test
     Rack::Test::UploadedFile.new(Rails.root.join('test', 'fixtures', 'files', 'images', 'test.png'), 'image/png')
   end
-  
 end

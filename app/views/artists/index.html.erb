@@ -1,10 +1,7 @@
-<% provide(:title, 'All artists') %>
-<h1>All Artists</h1>
+<% provide(:title, 'アーティスト一覧') %>
+<div class="container">
+<h2>アーティスト一覧</h2  >
 
-<%= will_paginate %>
-
-<ul class="artists">
-  <li><%= render @artists %></li>
-</ul>
+<%= render @artists %>
 
 <%= will_paginate %>

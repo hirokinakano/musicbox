@@ -12,8 +12,7 @@ class ArtistsSignupTest < ActionDispatch::IntegrationTest
       post artists_path, params: { artist: { name:                  "",
                                              email:                 "",
                                              password:              "bar",
-                                             password_confirmation: "foo" ,
-                                             content:               ""      } }
+                                             password_confirmation: "foo" ,  } }
     
     end
     assert_template "artists/new"
@@ -27,10 +26,11 @@ class ArtistsSignupTest < ActionDispatch::IntegrationTest
                                              email:                 "user@example.com",
                                              password:              "password",
                                              password_confirmation: "password",
-                                             content:               "Hello World"       } }
+                                             image:                 image_test          } }
     end
     follow_redirect!
     assert_template 'artists/show'
+    assert_select 'img'
   end
   
   test "login with invalid information" do

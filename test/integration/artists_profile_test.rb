@@ -11,7 +11,7 @@ class ArtistsProfileTest < ActionDispatch::IntegrationTest
     get artist_path(@artist)
     assert_template 'artists/show'
     assert_select 'title', full_title(@artist.name)
-    assert_select 'h1', text: @artist.name
-    assert_select 'h1>img.gravatar'
+    assert_select 'h2', text: @artist.name
+    assert_select 'img'
   end
 end
