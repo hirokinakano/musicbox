@@ -11,6 +11,6 @@ Rails.application.routes.draw do
   delete '/logout',  to: 'sessions#destroy'
   post   '/artists/new', to: 'artists#create'
   resources :artists
-  resources :posts, only: [:create, :destroy]
+  resources :posts
 end
 

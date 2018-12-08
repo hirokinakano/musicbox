@@ -30,3 +30,8 @@ Things you may want to cover:
 - adminテスト未実装
 - postの投稿が現在はtoppageにあるが個別のアーティスページに設置すべき
 - post_interface.testのdeleteの確認テストを削除（メモに残してあります）
+
+## タスク
+- artist/editの紹介文（content）の文字数制限を表示
+- artistのプロフィール画像をgravatarから通常のimageに変更
+- psotテストにてmusicポストのテストを未実装 

@@ -25,4 +25,13 @@ class PostsInterfaceTest < ActionDispatch::IntegrationTest
     get artist_path(artists(:ziro))
     assert_select 'a', text: 'delete', count: 0
   end
+  
+  test "post should be upload picture and music" do
+    log_in_as(@artist)
+    get new_post_path
+    content = "This post is content for integration test"
+    post posts_path, params: {post: { content: content, 
+                                      image: image_test }}
+                                      
+  end
 end

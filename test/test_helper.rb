@@ -23,4 +23,10 @@ class ActionDispatch::IntegrationTest
     post login_path, params: { session: { email: user.email,
                                           password: password,} }
   end
+  
+  #テスト用のイメージ画像を返す
+  def image_test
+    Rack::Test::UploadedFile.new(Rails.root.join('test', 'fixtures', 'files', 'images', 'test.png'), 'image/png')
+  end
+  
 end
