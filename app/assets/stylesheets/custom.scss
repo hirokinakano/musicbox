@@ -207,3 +207,20 @@ span.picture {
     border: 0;
   }
 }
+
+.artist-info {
+  display: block;
+}
+
+/* artist/show */
+.post-info {
+  padding-bottom: 20px;
+  
+  img {
+    display: block;
+  }
+  
+  audio {
+    display: block;
+  }
+}

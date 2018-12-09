@@ -5,6 +5,7 @@ class Post < ApplicationRecord
   mount_uploader :music, MusicUploader
   validates :artist_id, presence: true
   validates :content, presence: true, length: { maximum: 140 }
+  validates :title, presence: true, length: { maximum: 140 }
   validate :picture_size
   
   private

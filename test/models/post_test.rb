@@ -4,7 +4,7 @@ class PostTest < ActiveSupport::TestCase
   
   def setup 
     @artist = artists(:taro)
-    @post = @artist.posts.build(content: "Hello World")
+    @post = @artist.posts.build(content: "Hello World", title: "foobar")
   end
   
   test "should be valid" do
@@ -25,6 +25,17 @@ class PostTest < ActiveSupport::TestCase
     @post.content = "a" * 141
     assert_not @post.valid?
   end
+  
+  test "title should be present" do
+    @post.title = "   "
+    assert_not @post.valid?
+  end
+
+  test "title should be at most 140 characters" do
+    @post.title = "a" * 141
+    assert_not @post.valid?
+  end
+  
   
   test "order shold be most recent first" do
     assert_equal posts(:most_recent), Post.first

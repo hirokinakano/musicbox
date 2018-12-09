@@ -61,7 +61,7 @@ class ArtistTest < ActiveSupport::TestCase
 
   test "associated posts should be destroyed" do
     @artist.save
-    @artist.posts.create(content: "Hello World")
+    @artist.posts.create(content: "Hello World", title: "foobar")
     assert_difference 'Post.count', -1 do
       @artist.destroy
     end

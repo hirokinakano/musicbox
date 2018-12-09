@@ -8,9 +8,10 @@ class PostsController < ApplicationController
   
   def create 
     @post = current_user.posts.build(post_params)
+    @artist = current_user
     if @post.save
-      flash[:success] = "Post created!"
-      redirect_to root_url
+      flash[:success] = "投稿に成功しました!"
+      redirect_to @artist
     else
       @feed_items = []  
       render 'toppages/index'
@@ -25,7 +26,7 @@ class PostsController < ApplicationController
   
   private
     def post_params
-      params.require(:post).permit(:content, :picture, :music)
+      params.require(:post).permit(:content, :picture, :music, :title)
     end
     
     def correct_user

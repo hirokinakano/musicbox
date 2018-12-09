@@ -16,10 +16,11 @@ class PostsInterfaceTest < ActionDispatch::IntegrationTest
     assert_select 'div#error_explanation'
     # 有効な送信
     content = "This post is content for integration test"
+    title = "Hello World"
     assert_difference 'Post.count', 1 do
-      post posts_path, params: { post: { content: content } } 
+      post posts_path, params: { post: { content: content, title: title } } 
     end
-    assert_redirected_to root_url
+    assert_redirected_to @artist
     follow_redirect!
     # 違うユーザーのプロフィールにアクセス(削除リンクがないことを確認)
     get artist_path(artists(:ziro))
