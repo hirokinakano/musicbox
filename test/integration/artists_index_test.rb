@@ -15,9 +15,6 @@ class ArtistsIndexTest < ActionDispatch::IntegrationTest
     first_page_of_artists = Artist.paginate(page: 1)
     first_page_of_artists.each do |artist|
       assert_select 'a[href=?]', artist_path(artist), text: artist.name
-      unless artist == @admin
-        assert_select 'a[href=?]', artist_path(artist), text: 'delete'
-      end
     end
     assert_difference 'Artist.count', -1 do
       delete artist_path(@non_admin)

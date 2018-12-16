@@ -5,10 +5,6 @@
         <%= image_tag artist.image.url, size: 200 %>
       </div>
       <%= link_to artist.name, artist %>
-      <% if current_user.admin? %>
-        | <%= link_to "delete", artist, method: :delete,
-                                      data: { confirm: "You sure?" } %>
-      <% end %>
     </div>
   </div>
 </div>

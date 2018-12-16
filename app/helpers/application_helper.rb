@@ -1,4 +1,5 @@
 module ApplicationHelper
+  include SessionsHelper
   
   #ページごとにタイトルを返す
   def full_title(page_title = '')

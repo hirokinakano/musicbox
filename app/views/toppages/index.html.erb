@@ -1,29 +1,13 @@
-<% if logged_in? %>
-  <div class="rou">
-    <aside class="col-md-4">
-      <section class="artist_info">
-        <%= render 'shared/artist_info' %>
-      </section>
-      <section>
-        <%= render 'shared/post_form' %>
-      </section>
-    </aside>
-    <div class="col-md-8">
-      <h3>Post feed</h3>
-      <%= render 'shared/feed' %>
+<div class="cover">
+  <div class="cover-inner">
+    <div class="cover-contents">
+      <h1>Let's enjoy music</h1>
+      <p>Music Boxはアーティストとリスナーを紡ぐ音源配布サイトです</p>
+      <p>誰でも音源をアップロードしたり、ダウンロードすることができます</p>
     </div>
   </div>
-<% else %>
-  <div class="top-wrapper">
-    <div class="container">
-      <div class="top-wrapper-heading">
-        <h1>Let's enjoy music</h1>
-        <p>Music Boxはアーティストとリスナーを紡ぐ音源配布サイトです</p>
-        <p>誰でも音源をアップロードしたり、ダウンロードすることができます</p>
-      </div>
-      <div class="top-wrapper-btn"L>
-        <p>ボタン等配置</p>
-      </div>
-    </div>
-  </div>
-<% end %>
+</div>
+<div class="middle-wrapper">
+  <h2>おすすめアーティスト一覧</h2>
+  <%= render @artists %>
+</div>
