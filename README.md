@@ -34,4 +34,4 @@ Things you may want to cover:
 ## タスク
 - artist/editの紹介文（content）の文字数制限を表示
 - artistのプロフィール画像をgravatarから通常のimageに変更
-- psotテストにてmusicポストのテストを未実装 
+- pullrequestおよびissueの理解
