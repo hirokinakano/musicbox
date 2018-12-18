@@ -1,7 +1,17 @@
 <% provide(:title, 'アーティスト一覧') %>
 <div class="container">
 <h2>アーティスト一覧</h2>
-
-<%= render @artists %>
+  <% @artists.each do |artist| %>
+  <div class="rou">
+  <div class="col-md-4 col-sm-4 col-xs-12">
+    <div class="panel panel-default">
+      <div class="panel-heading text-center">
+        <%= image_tag artist.image.url, size: 200 %>
+      </div>
+      <%= link_to artist.name, artist %>
+    </div>
+  </div>
+</div>
+  <% end %>
 
 <%= will_paginate %>

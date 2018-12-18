@@ -1,10 +1,10 @@
 class ArtistsController < ApplicationController
-  before_action :logged_in_artist, only: [:index,:edit, :update, :destroy]
+  before_action :logged_in_artist, only: [:edit, :update, :destroy]
   before_action :correct_user,   only: [:edit, :update]
   before_action :admin_user, only: [:destroy]
   
   def index
-    @artists = Artist.paginate(page: params[:page]) 
+     @artists = Artist.paginate(page: params[:page]).search(params[:search])
   end
 
   def show
