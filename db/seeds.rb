@@ -1,17 +1,24 @@
-Artist.create!(name:  "Example User",
-             email: "example@railstutorial.org",
-             password:              "foobar",
-             password_confirmation: "foobar",
-             admin: true)
+Artist.create!(name:                  "Example User",
+               email:                 "example@railstutorial.org",
+               password:              "foobar",
+               password_confirmation: "foobar",
+               admin:                 true,
+               content:               "Hello World",
+               image: FIle.open("./app/assets/images/1.jpg") )
 
-99.times do |n|
+
+5.times do |n|
   name  = "example-#{n+1}"
-  email = "example-#{n+1}@railstutorial.org"
+  email = "example-#{n+1}@rails.com"
   password = "password"
-  Artist.create!(name:  name,
-               email: email,
-               password:              password,
-               password_confirmation: password)
+  content = "Hello World!"
+  n += 1
+  Artist.create!(name:                  name,
+                 email:                 email,
+                 password:              password,
+                 password_confirmation: password,
+                 content:               content,
+                 image: File.open("./app/assets/images/#{n+1}.jpg") )
 end
 
 artists = Artist.order(:created_at).take(6)
@@ -21,4 +28,7 @@ artists = Artist.order(:created_at).take(6)
   artists.each { |artist| artist.posts.create!(content: content, title: title) }
 end
 
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+#active_adminの管理者アカウントを作成
+AdminUser.create!(email: 'admin@example.com', 
+                  password: 'password', 
+                  password_confirmation: 'password') if Rails.env.development?

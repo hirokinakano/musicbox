@@ -29,8 +29,8 @@ class ArtistsSignupTest < ActionDispatch::IntegrationTest
                                              image:                 image_test          } }
     end
     follow_redirect!
-    assert_template 'artists/show'
-    assert_select 'img'
+    assert_template 'toppages/index'
+    assert_select 'div.alert'
   end
   
   test "login with invalid information" do

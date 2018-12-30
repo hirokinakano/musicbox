@@ -19,8 +19,8 @@ class ArtistsController < ApplicationController
   def create
     @artist = Artist.new(artist_params)
     if @artist.save
-      flash[:success] = "Welcome to the Sample App!"
-      redirect_back_or @artist
+      flash[:success] = "新規登録に成功しました!"
+      redirect_to root_url
     else
       render 'new'
     end
