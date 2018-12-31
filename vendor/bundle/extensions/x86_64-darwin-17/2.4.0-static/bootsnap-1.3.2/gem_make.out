@@ -1,0 +1,15 @@
+current directory: /Users/hiroki/Desktop/Rails/musicbox/vendor/bundle/gems/bootsnap-1.3.2/ext/bootsnap
+/Users/hiroki/.rbenv/versions/2.4.1/bin/ruby -r ./siteconf20181231-97009-zxbcwz.rb extconf.rb
+creating Makefile
+
+current directory: /Users/hiroki/Desktop/Rails/musicbox/vendor/bundle/gems/bootsnap-1.3.2/ext/bootsnap
+make "DESTDIR=" clean
+
+current directory: /Users/hiroki/Desktop/Rails/musicbox/vendor/bundle/gems/bootsnap-1.3.2/ext/bootsnap
+make "DESTDIR="
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.bundle
+
+current directory: /Users/hiroki/Desktop/Rails/musicbox/vendor/bundle/gems/bootsnap-1.3.2/ext/bootsnap
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 bootsnap.bundle ./.gem.20181231-97009-4x9ngr/bootsnap

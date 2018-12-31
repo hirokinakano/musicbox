@@ -20,14 +20,11 @@ $gray-medium-light: #eaeaea;
   @include box_sizing;
 }
 
+/* 共通項目　*/
 footer {
   margin-top: 40px;
   width: 100%;
   clear:both;
-}
-
-body {
-  background: black;
 }
 
 /* トップページ */
@@ -38,25 +35,25 @@ body {
   height: 350px;
   background: url("/images/background-image.jpg") center center no-repeat;
   background-size: cover;
-  
+
   .cover-inner {
     height: 100%;
     margin: 0 auto;
     display: table;
-    
+
     .cover-contents {
       display: table-cell;
       vertical-align: middle;
       text-align: center;
       position: relative;
-      
+
       h1  {
         margin: 0 0 20px 0;
         color: #fff;
         font-weight: bold;
         letter-spacing: 0.15em;
       }
-      
+
       p {
         color: #fff;
       }
@@ -68,15 +65,14 @@ body {
   text-align: center;
 }
 
-
 /* ナビバー */
 #logo {
   color: #333;
   font-size: 1.3em;
   text-transform: uppercase;
   padding-top: 9px;
-  float: left;  
-  
+  float: left;
+
   &:hover {
     color: #333;
     text-decoration: none;
@@ -213,12 +209,18 @@ span.picture {
 /* artist/show */
 .post-info {
   padding-bottom: 20px;
-  
+
   img {
     display: block;
   }
-  
+
   audio {
     display: block;
   }
+}
+
+/* bootstrap 拡張 */
+.navbar-margin-fix {
+  @extend .navbar !optional;
+  margin-bottom: 0px;
 }

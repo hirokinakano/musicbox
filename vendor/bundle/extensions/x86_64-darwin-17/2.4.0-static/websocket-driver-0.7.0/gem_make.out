@@ -1,0 +1,15 @@
+current directory: /Users/hiroki/Desktop/Rails/musicbox/vendor/bundle/gems/websocket-driver-0.7.0/ext/websocket-driver
+/Users/hiroki/.rbenv/versions/2.4.1/bin/ruby -r ./siteconf20181231-97009-1pzxw4h.rb extconf.rb
+creating Makefile
+
+current directory: /Users/hiroki/Desktop/Rails/musicbox/vendor/bundle/gems/websocket-driver-0.7.0/ext/websocket-driver
+make "DESTDIR=" clean
+
+current directory: /Users/hiroki/Desktop/Rails/musicbox/vendor/bundle/gems/websocket-driver-0.7.0/ext/websocket-driver
+make "DESTDIR="
+compiling websocket_mask.c
+linking shared-object websocket_mask.bundle
+
+current directory: /Users/hiroki/Desktop/Rails/musicbox/vendor/bundle/gems/websocket-driver-0.7.0/ext/websocket-driver
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 websocket_mask.bundle ./.gem.20181231-97009-7sqwb9
