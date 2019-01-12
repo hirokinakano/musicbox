@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
+  root to: 'toppages#index'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  root to: 'toppages#index'
   devise_for :listeners, :controllers => {
     :registrations => 'listeners/registrations',
     :sessions => 'listeners/sessions',
@@ -15,4 +15,3 @@ Rails.application.routes.draw do
   resources :artists
   resources :posts
 end
-

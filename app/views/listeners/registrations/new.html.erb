@@ -1,20 +1,20 @@
 <% provide(:title, '新規登録') %>
 <div class="row">
-  <div class="col-md-6 col-md-offset-3 text-center">
+  <div class="col-md-offset-4 col-md-4 text-center">
     <h2>リスナー新規登録</h2>
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= devise_error_messages! %>
-    
+
       <div class="form-group">
         <%= f.label :リスナーネーム %>
         <%= f.text_field :name, autofocus: true, class: "form-control" %>
       </div>
-    
+
       <div class="form-group">
         <%= f.label :Ｅメールアドレス %><br />
         <%= f.email_field :email, autocomplete: "email", class: "form-control" %>
       </div>
-    
+
       <div class="form-group">
         <%= f.label :パスワード %>
         <% if @minimum_password_length %>
@@ -22,19 +22,19 @@
         <% end %><br />
         <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
       </div>
-    
+
       <div class="form-group">
         <%= f.label :パスワード確認 %><br />
         <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
       </div>
-    
+
       <div class="actions">
         <%= f.submit "新規登録", class: "btn btn-primary" %>
       </div>
-      
+
     <% end %>
-    
+
     <%= render "listeners/shared/links" %>
-    
+
   </div>
 </div>
