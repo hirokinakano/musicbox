@@ -1,6 +1,8 @@
-##MusicBox
+## MusicBox
 MusicBoxはリスナーとアーティストを紡ぐ音楽配信アプリです。
-##実装した機能
+## Heroku URL
+https://ancient-cliffs-29430.herokuapp.com/
+## 実装した機能
 - ログイン機能(devise)
 - 画像アップロード機能
 - 音源アップロード機能
