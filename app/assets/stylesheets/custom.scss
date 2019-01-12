@@ -120,7 +120,6 @@ aside {
 }
 
 /* forms */
-
 #error_explanation {
   color: red;
   ul {
@@ -223,4 +222,17 @@ span.picture {
 .navbar-margin-fix {
   @extend .navbar !optional;
   margin-bottom: 0px;
+}
+
+/* devise用flashメッセージ */
+.alert-notice {
+  background-color: #f2dede;
+  border-color: #ebccd1;
+  color: #a94442;
+}
+
+.alert-danger {
+  background-color: #f2dede;
+  border-color: #ebccd1;
+  color: #a94442;
 }
