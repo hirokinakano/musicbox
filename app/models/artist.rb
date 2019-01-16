@@ -1,4 +1,5 @@
 class Artist < ApplicationRecord
+  attr_accessor :remember_token
   has_many :posts, dependent: :destroy
   before_save { self.email = email.downcase }
   mount_uploader :image, ImageUploader
@@ -11,29 +12,54 @@ class Artist < ApplicationRecord
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
   validate :image_size
-  
-  def Artist.digest(string)
+
+  ## 渡された文字列のハッシュ値を返す
+  def self.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
                                                   BCrypt::Engine.cost
     BCrypt::Password.create(string, cost: cost)
   end
-  
-  def feed 
-    Post.where("artist_id = ? ", id)  
+
+  ## ランダムなトークンを返す
+  def self.new_token
+    SecureRandom.urlsafe_base64
   end
-  
-  def self.search(search) #ここでのself.はUser.を意味する
+
+  ## 永続セッションのためにユーザーをデータベースに記憶する
+  def remember
+    self.remember_token = Artist.new_token
+    update_attribute(:remember_digest, User.digest(remember_token))
+  end
+
+  ## 渡されたトークンがダイジェストと一致していたらtrueを返す
+  def authenticated?(remember_token)
+    BCrypt::Password.new(remember_digest).is_password?(remember_token)
+  end
+
+  ## モデルを降順に表示
+  def feed
+    Post.where("artist_id = ? ", id)
+  end
+
+  ## 検索用ロジック
+  def self.search(search)
+    #検索とnameの部分一致
     if search
-      Artist.where(['name LIKE ?', "%#{search}%"]) #検索とnameの部分一致を表示。
+      Artist.where(['name LIKE ?', "%#{search}%"])
     else
-      Artist.all #全て表示。User.は省略
+      Artist.all
     end
   end
-  
+
+  # ユーザーのログイン情報を破棄する
+  def forget
+    update_attribute(:remember_token, nil)
+  end
+
   private
-    
+
     #アップロードされた画像のサイズをバリデーションする
-    def image_size 
+    def image_size
       if image.size > 5.megabytes
         errors.add(:image, "画像のサイズを5MB以下にしてください")
       end

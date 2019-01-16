@@ -7,6 +7,7 @@ class SessionsController < ApplicationController
     artist = Artist.find_by(email: params[:session][:email].downcase)
     if artist && artist.authenticate(params[:session][:password])
       log_in artist
+      remember artist
       redirect_to artist
       flash.now[:notice] = 'Music Boxへようこそ!'
     else
