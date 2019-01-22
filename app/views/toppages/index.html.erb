@@ -1,17 +1,44 @@
-<div class="cover">
-  <div class="cover-inner">
-    <div class="cover-contents">
-      <h1>Let's enjoy music</h1>
-      <p>Music Boxはアーティストとリスナーを紡ぐ音源配布サイトです</p>
-      <p>誰でも音源をアップロードしたり、ダウンロードすることができます</p>
-      <%= form_tag(artists_path, :method => 'get' ) do %>
-        <%= text_field_tag :search %>
-        <%= submit_tag 'Search', :name => nil %>
-      <% end %>
+<section class="top">
+  <p class="site-title-sub">This is the App to broadcast music...</p>
+  <h1 class="site-title">Welcome to Music Box</h1>
+  <div class="buttons">
+    <%= link_to '新規登録', new_artist_path, class: "button" %>
+    <%= link_to 'ログイン', login_path, class: "button-showy" %>
+  </div>
+</section>
+<section class="about">
+  <h2 class="heading">ABOUT</h2>
+  <p class="about-text">Music Boxはアーティストリスナーを紡ぐ音楽配信アプリです。</p>
+  <div class="descriptions-wrapper">
+    <div class="description-box">
+      <%= fa_icon "music", class: "description-icon" %>
+      <div class="description-title">ARTIST</div>
+      <p class="description-text">
+        アーティストとして音楽を配信できます。<br>
+        音楽の配信だけでなく、ライブ情報の告知等も<br>
+        行うことができます。
+      </p>
+    </div>
+    <div class="description-box">
+      <%= fa_icon "headphones", class: "description-icon" %>
+      <div class="description-title">LISTENER</div>
+      <p class="description-text">
+        リスナーとして音楽を聴くことができます。<br>
+        音楽を聴くだけでなく、自分だけのプレイブックを<br>
+        作成することもできます。
+      </p>
     </div>
   </div>
-</div>
-<div class="middle-wrapper">
-  <h2>おすすめアーティスト一覧</h2>
-  <%= render @artists %>
-</div>
+</section>
+<section class="artist-index">
+  <h2 class="heading">Recommended Artists</h2>
+  <%= render 'shared/artist_index_carousel' %>
+</section>
+<section class="contact">
+  <h2 class="heading">CONTACT</h2>
+  <form class="contact-form">
+    <input type="text" name="name" placeholder="NAME">
+    <textarea name="message" placeholder="MESSAGE"></textarea>
+    <input type="submit" value="SEND">
+  </form>
+</section>

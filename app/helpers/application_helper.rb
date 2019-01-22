@@ -10,10 +10,4 @@ module ApplicationHelper
       page_title + " | " + base_title
     end
   end
-
-  #flashメッセージのvieｗの置換を行う
-  def returnFlashMessage(flash)
-    if flash == notice ? "success" : "danger"
-  end
-end
 end
