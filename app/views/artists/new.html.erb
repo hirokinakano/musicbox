@@ -1,38 +1,37 @@
 <% provide(:title, '新規登録') %>
-<div class="row form">
-  <div class="col-md-offset-4 col-md-4 text-center">
-    <h2>アーティスト登録</h2>
+<div class="form-wrapper">
+  <h2 class="form-header">アーティスト新規登録</h2>
     <%= form_for(@artist) do |f| %>
       <%= render 'shared/artist_error_messages', object: f.object %>
+      <ul class="form-parts">
+        <li class="first-parts">
+          <%= f.label :アーティストネーム %>
+          <%= f.text_field :name, placeholder: "Name" %>
+        </li>
 
-      <div class="form-group row">
-        <%= f.label :アーティストネーム, class: "col-sm-2 col-form-label" %>
-        <div class="col-sm-10">
-          <%= f.text_field :name, class: 'form-control' %>
-        </div>
-      </div>
+        <li class="second-parts email">
+          <%= f.label :Ｅメールアドレス %>
+          <%= f.email_field :email, placeholder: "Email"%>
+        </li>
 
-      <div class="form-group">
-        <%= f.label :Ｅメールアドレス %>
-        <%= f.email_field :email, class: 'form-control' %>
-      </div>
+        <li class="third-parts password">
+          <%= f.label :パスワード %>
+          <%= f.password_field :password, placeholder: "Password" %>
+        </li>
 
-      <div class="form-group">
-        <%= f.label :パスワード %>
-        <%= f.password_field :password, class: 'form-control' %>
-      </div>
+        <li class="fourts-parts password-confirmation">
+          <%= f.label :password_confirmation, "パスワード(確認用)" %>
+          <%= f.password_field :password_confirmation, placeholder: "Password confirmation" %>
+        </li>
 
-      <div class="form-group">
-        <%= f.label :password_confirmation, "パスワード(確認用)" %>
-        <%= f.password_field :password_confirmation, class: 'form-control' %>
-      </div>
+        <li class="fifth-parts">
+          <%= f.label :プロフィール画像 %>
+          <%= f.file_field :image, accept: 'image/jpeg, iamge/gif, image/png' %>
+        </li>
 
-      <div class="form-group">
-        <%= f.label :プロフィール画像 %>
-        <%= f.file_field :image, accept: 'image/jpeg, iamge/gif, image/png' %>
-      </div>
-
-      <%= f.submit "新規登録", class: "btn btn-primary" %>
+        <li class="submit-login">
+          <%= f.submit "新規登録", class: "btn btn-primary" %>
+        </li>
+      </ul>
     <% end %>
-  </div>
 </div>

@@ -244,10 +244,75 @@ aside {
 }
 
 /* フォーム */
-.form {
-  padding: 100px 20px 200px;
+.form-wrapper {
+  padding: 40px 200px 200px;
 }
-
+.form-header {
+  font-size: 2.5rem;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #1d1d1d;
+  text-align: left;
+  margin-left: 140px;
+}
+.form-wrapper form {
+  width: 1200px;
+}
+.form-parts {
+  width: 900px;
+  margin: 0 auto;
+  li {
+    list-style: none;
+    width: 70%;
+  }
+  label {
+    margin-right: 10px;
+    float: left;
+  }
+  input {
+    width: 250px;
+  }
+}
+.first-parts {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #3b3b3b;
+}
+.second-parts {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #424242;
+  input {
+    margin-left: 40px;
+  }
+}
+.third-parts {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #3b3b3b;
+}
+.fourts-parts {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #424242;
+}
+.fifth-parts {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #3b3b3b;
+}
+.email input {
+  margin-right: 30px;
+}
+.password input {
+  margin-left: 50px;
+}
+.fifth-parts input {
+  margin: 0 auto;
+}
+.submit-login {
+  margin-top: 20px;
+}
 #error_explanation {
   color: red;
   ul {

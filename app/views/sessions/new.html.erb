@@ -1,20 +1,21 @@
 <% provide(:title, "ログイン") %>
-<div class="row">
-  <div class="col-md-offset-4 col-md-4 text-center" >
-    <h2>アーティストログイン</h2>
+<div class="form-wrapper">
+    <h2 class="form-header">アーティストログイン</h2>
     <%= form_for(:session, url: login_path) do |f| %>
+      <ul class="form-parts">
+        <li class="first-parts">
+          <%= f.label :Ｅメールアドレス %>
+          <%= f.email_field :email, placeholder: 'Email' %>
+        </li>
 
-      <div class="form-group">
-      <%= f.label :Ｅメールアドレス %>
-      <%= f.email_field :email, class: 'form-control' %>
-      </div>
+        <li class="second-parts">
+          <%= f.label :パスワード %>
+          <%= f.password_field :password, placeholder: 'Password' %>
+        </li>
 
-      <div class="form-group">
-      <%= f.label :パスワード %>
-      <%= f.password_field :password, class: 'form-control' %>
-      </div>
-
-      <%= f.submit "ログイン", class: "btn btn-primary" %>
+        <li class="submit-login">
+          <%= f.submit "ログイン", class: "btn btn-primary btn-sm" %>
+        </li>
+      </ul>
     <% end %>
-  </div>
 </div>

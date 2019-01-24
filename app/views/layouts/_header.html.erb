@@ -20,28 +20,8 @@
           <li><a href="#">マイページ</a></li>
           <li><%= link_to 'ログアウト', destroy_listener_session_path, method: :delete %></li>
         <% else %>
-          <li>
-            <div class="dropdown">
-              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-              新規登録<span class="caret"></span>
-              </button>
-              <ul class="dropdown-menu">
-                <li><%= link_to 'アーティスト', new_artist_path %></li>
-                <li><%= link_to 'リスナー', new_listener_registration_path %></li>
-              </ul>
-            </div>
-          </li>
-          <li>
-            <div class="dropdown">
-              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-              ログイン<span class="caret"></span>
-              </button>
-              <ul class="dropdown-menu">
-                <li><%= link_to 'アーティスト', login_path %></li>
-                <li><%= link_to 'リスナー',  new_listener_session_path %></li>
-              </ul>
-            </div>
-          </li>
+          <li><%= link_to '新規登録', new_artist_path %></li>
+          <li><%= link_to 'ログイン', login_path %></li>
         <% end %>
       </ul>
       </div>
