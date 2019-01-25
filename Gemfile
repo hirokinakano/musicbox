@@ -25,6 +25,7 @@ gem 'activeadmin'
 gem 'carrierwave', '1.2.2'
 gem 'mini_magick', '4.7.0'
 gem 'font-awesome-rails'
+gem 'toastr-rails'
 
 group :development, :test do
   gem 'sqlite3'
