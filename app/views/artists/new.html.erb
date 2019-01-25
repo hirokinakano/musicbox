@@ -1,37 +1,37 @@
 <% provide(:title, '新規登録') %>
 <div class="form-wrapper">
   <h2 class="form-header">アーティスト新規登録</h2>
-    <%= form_for(@artist) do |f| %>
-      <%= render 'shared/artist_error_messages', object: f.object %>
-      <ul class="form-parts">
-        <li class="first-parts">
-          <%= f.label :アーティストネーム %>
-          <%= f.text_field :name, placeholder: "Name" %>
-        </li>
+  <%= form_for(@artist) do |f| %>
+    <%= render 'shared/artist_error_messages', object: f.object %>
+    <ul class="form-parts">
+      <li class="first-parts">
+        <%= f.label :アーティストネーム %>
+        <%= f.text_field :name, placeholder: "Name" %>
+      </li>
 
-        <li class="second-parts email">
-          <%= f.label :Ｅメールアドレス %>
-          <%= f.email_field :email, placeholder: "Email"%>
-        </li>
+      <li class="second-parts email">
+        <%= f.label :Ｅメールアドレス %>
+        <%= f.email_field :email, placeholder: "Email"%>
+      </li>
 
-        <li class="third-parts password">
-          <%= f.label :パスワード %>
-          <%= f.password_field :password, placeholder: "Password" %>
-        </li>
+      <li class="third-parts password">
+        <%= f.label :パスワード %>
+        <%= f.password_field :password, placeholder: "Password" %>
+      </li>
 
-        <li class="fourts-parts password-confirmation">
-          <%= f.label :password_confirmation, "パスワード(確認用)" %>
-          <%= f.password_field :password_confirmation, placeholder: "Password confirmation" %>
-        </li>
+      <li class="fourts-parts password-confirmation">
+        <%= f.label :password_confirmation, "パスワード(確認用)" %>
+        <%= f.password_field :password_confirmation, placeholder: "Password confirmation" %>
+      </li>
 
-        <li class="fifth-parts">
-          <%= f.label :プロフィール画像 %>
-          <%= f.file_field :image, accept: 'image/jpeg, iamge/gif, image/png' %>
-        </li>
+      <li class="fifth-parts">
+        <%= f.label :プロフィール画像 %>
+        <%= f.file_field :image, accept: 'image/jpeg, iamge/gif, image/png' %>
+      </li>
 
-        <li class="submit-login">
-          <%= f.submit "新規登録", class: "btn btn-primary" %>
-        </li>
-      </ul>
-    <% end %>
+      <li class="submit-login">
+        <%= f.submit "新規登録", class: "btn btn-primary" %>
+      </li>
+    </ul>
+  <% end %>
 </div>

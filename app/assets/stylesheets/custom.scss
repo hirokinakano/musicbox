@@ -1,6 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+@import "toastr";
 
 /* mixins, variables, etc. */
 $gray-medium-light: #eaeaea;
@@ -234,16 +235,11 @@ aside {
   }
 }
 
-.gravatar {
-  float: left;
-  margin-right: 10px;
-}
-
-.gravatar_edit {
-  margin-top: 15px;
-}
-
 /* フォーム */
+input {
+  color: #000000;
+}
+
 .form-wrapper {
   padding: 40px 200px 200px;
 }
@@ -271,6 +267,10 @@ aside {
   }
   input {
     width: 250px;
+  }
+  textarea {
+    width: 350px;
+    height: 200px;
   }
 }
 .first-parts {
@@ -301,6 +301,11 @@ aside {
   padding-bottom: 20px;
   background-color: #3b3b3b;
 }
+.sixth-parts {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #424242;
+}
 .email input {
   margin-right: 30px;
 }
@@ -312,6 +317,11 @@ aside {
 }
 .submit-login {
   margin-top: 20px;
+}
+.music .image {
+  input {
+    margin: 0 auto;
+  }
 }
 #error_explanation {
   color: red;

@@ -9,9 +9,9 @@ class SessionsController < ApplicationController
       log_in artist
       remember artist
       redirect_to artist
-      flash.now[:notice] = 'Music Boxへようこそ!'
+      flash[:notice] = 'Music Boxへようこそ!'
     else
-      flash.now[:alert] = 'Emailまたはパスワードが間違っています!'
+      flash[:alert] = 'Emailまたはパスワードが間違っています!'
       render 'new'
     end
   end
@@ -19,5 +19,6 @@ class SessionsController < ApplicationController
   def destroy
     log_out
     redirect_to root_url
+    flash[:notice] = "ログアウトに成功しました!"
   end
 end

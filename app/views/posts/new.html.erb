@@ -1,32 +1,32 @@
-<% provide(:title, "ポスト編集") %>
-<div class="row">
-  <div class="col-md-6 col-md-offset-3 text-center">
-    <h2>新規投稿</h2>
+<% provide(:title, "Musicアップロード") %>
+<div class="form-wrapper">
+  <h2 class="form-header">Musicアップロード</h2>
     <%= form_for(@post) do |f| %>
       <%= render 'shared/artist_error_messages', object: f.object %>
-      
-      <div class="form-group">
-        <%= f.label :タイトル %>
-        <%= f.text_field :title, class: 'form-control' %>
-      </div>
-      
-      <div class="form-group">
-        <%= f.label :説明 %>
-        <%= f.text_area :content, class: 'form-control' %>
-      </div>
-      
-      <div class="form-group">
-        <%= f.label :画像アップロード %>
-        <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png', class: 'form-control'%>
-      </div>
-      
-      <div class="form-group">
-      <%= f.label :音源アップロード %>
-      <%= f.file_field :music, class: 'form-control' %>
-      </div>
-      
-      <%= f.submit "投稿する", class: 'btn btn-primary' %>
-    
+      <ul class="form-parts">
+        <li class="first-parts">
+          <%= f.label :タイトル %>
+          <%= f.text_field :title, placeholder: "Title"%>
+        </li>
+
+        <li class="second-parts">
+          <%= f.label :メッセージ %>
+          <%= f.text_area :content, placeholder: "Message" %>
+        </li>
+
+        <li class="third-parts image">
+          <%= f.label :画像アップロード %>
+          <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png'%>
+        </li>
+
+        <li class="fourts-parts music">
+          <%= f.label :音源アップロード %>
+          <%= f.file_field :music %>
+        </li>
+
+        <li class="submit-login">
+          <%= f.submit "投稿する", class: 'btn btn-primary' %>
+        </li>
+      </ul>
     <% end %>
-  </div>
 </div>
