@@ -13,6 +13,11 @@
           <%= f.password_field :password, placeholder: 'Password' %>
         </li>
 
+        <%= f.label :remember_me, class: 'checkbox-inline' do %>
+          <%= f.check_box :remember_me %>
+          <span>Remember me on this computer</span>
+        <% end %>
+
         <li class="submit-login">
           <%= f.submit "ログイン", class: "btn btn-primary btn-sm" %>
         </li>
